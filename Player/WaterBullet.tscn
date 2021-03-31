@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 2.66013
-height = 5.34888
+height = 1.52987
 
 [node name="WaterBullet" type="Area2D"]
 gravity = 0.0
@@ -17,6 +17,13 @@ animation = "Motion"
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+position = Vector2( 1.99939, -0.420924 )
 rotation = 1.5708
 shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -0.0350773, -0.456 )
+scale = Vector2( 0.551015, 0.358092 )
+[connection signal="area_entered" from="." to="." method="_on_WaterBullet_area_entered"]
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
