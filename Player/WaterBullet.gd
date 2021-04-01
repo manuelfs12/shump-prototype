@@ -18,7 +18,7 @@ func set_direction(direction):
 
 
 func _on_WaterBullet_area_entered(area):
-	if area.name == "Enemy":
+	if area.get_groups()[0] == "enemies":
 		speed = 0
 		animatedSprite.play("Splash")
 

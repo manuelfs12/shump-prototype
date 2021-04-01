@@ -17,4 +17,3 @@ func _ready():
 func _on_Enemy_damage(area):
 	if area.name == "WaterBullet":
 		queue_free()
-		print("OUCH")
